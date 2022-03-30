@@ -1,49 +1,23 @@
 # Personalized-FedAvg
 
-paper
+Thanks to the heavy dependency of [FedLab](https://github.com/SMILELab-FL/FedLab) and [FedLab-benchmarks](https://github.com/SMILELab-FL/FedLab-benchmarks), my code has already been pulled to https://github.com/SMILELab-FL/FedLab-benchmarks/tree/master/fedlab_benchmarks/perfedavg. this repo is only for displaying `README ` and as the interface for the people who interested in Personalized-FedAvg's implementation 😄.
+
+
+
+## Further reading
 
 - Personalized-FedAvg: [Improving Federated Learning Personalization via Model Agnostic Meta Learning](https://arxiv.org/abs/1909.12488)
 - Reptile: [On First-Order Meta-Learning Algorithms](https://arxiv.org/abs/1803.02999)
 - MAML: [Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks](https://arxiv.org/abs/1703.03400)
+- LEAF: [LEAF: A Benchmark for Federated Settings](https://arxiv.org/pdf/1812.01097.pdf)
 
 ## Requirements
 
 - torch
-- torchvision
+- fedlab
 - tqdm
-- matplotlib
-- numpy
-
-You can run `pip install requirements.txt` to get all needed libraries.
-
-## Data
-
-- Download train and test datasets manually or they will be automatically download to `./data` from `torchvision.datasets`. You can redirect the root of datasets to your dataset directory, datasets root is set in `utils.get_datasets()`
-- Experiments are run on EMNIST(default) and MNIST.
-
-## Run
-
-If you find something wrong about experiment setting, please let me know. 🙏
-
-There're two way to run experiment in **Linux**. I have already set all hyper parameters well according to paper. Of course those can be modified. You can check `utils.get_args()` for more details about all hyper parameters. 
-
-I think it is practically to run `single_process.py` in **Windows** either. I'm not sure. 😂
-
-### Single-process
-
-```python
-python single_process.py
-```
-
-### Multi-process (needs more computational power)
-
-I have set 2 workers(process) to handle all training tasks.
-
-```python
-cd multi_process/ ; sh quick_start.sh
-```
-
-
+- pickle
+- pillow
 
 ## Performance
 
@@ -57,21 +31,21 @@ Personalization round: `5`
 
 | FedAvg local training epochs (5 clients) | Initial loss | Initial Acc | Personalized loss | Personalized Acc |
 | ---------------------------------------- | ------------ | ----------- | ----------------- | ---------------- |
-| 20                                       | 2.6404       | 68.94%      | 0.2486            | **97.14%**       |
-| 10                                       | 1.3143       | 71.20%      | 0.2716            | 93.20%           |
-| 5                                        | 1.0677       | 72.27%      | 0.2288            | 94.16%           |
-| 2                                        | 0.9335       | **75.89%**  | 0.2430            | 93.82%           |
+| 20                                       | 2.3022       | 79.35%      | 1.5766            | 84.86%           |
+| 10                                       | 1.8387       | 80.53%      | 1.1231            | 87.22%           |
+| 5                                        | 1.4899       | **83.19%**  | 0.9809            | **88.97%**       |
+| 2                                        | 1.4613       | 81.70%      | 0.9359            | 88.49%           |
 
 | FedAvg local training epochs (20 clients) | Initial loss | Initial Acc | Personalized loss | Personalized Acc |
 | ----------------------------------------- | ------------ | ----------- | ----------------- | ---------------- |
-| 20                                        | 1.2058       | 81.64%      | 0.1067            | 98.73%           |
-| 10                                        | 1.2833       | 81.61%      | 0.1007            | 98.72%           |
-| 5                                         | 1.3430       | 78.35%      | 0.1055            | 98.79%           |
-| 2                                         | 1.2059       | **82.63%**  | 0.0843            | **99.10%**       |
+| 20                                        | 2.2398       | 82.40%      | 0.9756            | 90.29%           |
+| 10                                        | 1.6560       | **83.23**%  | 0.8488            | 90.72%           |
+| 5                                         | 1.5485       | 81.48%      | 0.7452            | **90.77**%       |
+| 2                                         | 1.2707       | 82.48%      | 0.7139            | 90.48%           |
 
 Experiment result from [paper](https://arxiv.org/abs/1909.12488) is shown below
 
-![image-20220326202529457](image/image-20220326202529457.png)
+![image-20220326202529457](paper_exp_res.png)
 
-I ascribe the gap between mine and paper's results to the difference of the way to pre-process and split dataset and hyper parameters setting, and I think there is no big mistake in algorithm procedure. If it actually has, please let me know. 🙏  
+
 
