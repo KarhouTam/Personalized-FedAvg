@@ -12,13 +12,6 @@ Thanks to the heavy dependency of [FedLab](https://github.com/SMILELab-FL/FedLab
 - MAML: [Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks](https://arxiv.org/abs/1703.03400)
 - LEAF: [LEAF: A Benchmark for Federated Settings](https://arxiv.org/pdf/1812.01097.pdf)
 
-## Requirements
-
-- torch
-- fedlab
-- tqdm
-- pickle
-- pillow
 
 ## Performance
 
