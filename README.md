@@ -1,12 +1,13 @@
 # Personalized-FedAvg
 
-Thanks to the heavy dependency of [FedLab](https://github.com/SMILELab-FL/FedLab) and [FedLab-benchmarks](https://github.com/SMILELab-FL/FedLab-benchmarks), my code has already been pulled to https://github.com/SMILELab-FL/FedLab-benchmarks/tree/master/fedlab_benchmarks/perfedavg. this repo is only for displaying `README ` and as the interface for the people who interested in Personalized-FedAvg's implementation 😄.
+This repos is the implementation of [Improving Federated Learning Personalization via Model Agnostic Meta Learning](https://arxiv.org/abs/1909.12488). 
+
+Thanks to the heavy dependency of [FedLab](https://github.com/SMILELab-FL/FedLab) and [FedLab-benchmarks](https://github.com/SMILELab-FL/FedLab-benchmarks), my code has already been pulled to https://github.com/SMILELab-FL/FedLab-benchmarks/tree/master/fedlab_benchmarks/perfedavg. this repo is only for displaying `README` and as the interface for the people who interested in this algorithm implementation 😄.
 
 
 
 ## Further reading
 
-- Personalized-FedAvg: [Improving Federated Learning Personalization via Model Agnostic Meta Learning](https://arxiv.org/abs/1909.12488)
 - Reptile: [On First-Order Meta-Learning Algorithms](https://arxiv.org/abs/1803.02999)
 - MAML: [Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks](https://arxiv.org/abs/1703.03400)
 - LEAF: [LEAF: A Benchmark for Federated Settings](https://arxiv.org/pdf/1812.01097.pdf)
